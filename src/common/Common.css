@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 0.5em 1em;
+}
+
+.logo-container img {
+  height: 50px;
+  /* Adjust the size as needed */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1em;
+}
+
+.nav-links a:hover {
+  color: #ddd;
+}
