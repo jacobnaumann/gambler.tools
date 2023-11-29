@@ -1,17 +1,18 @@
+/* Sports.css */
+
 .sports-container {
   padding: 20px;
-  background-color: #f4f4f4;
-  min-height: 100vh;
-  /* Use viewport height to make container fill the height of the screen */
+  background-color: var(--light-shade);
+  height: auto;
 }
 
 .sports-container h1 {
-  color: #333;
+  color: var(--dark-shade);
   text-align: center;
 }
 
 .sports-container p {
-  color: #666;
+  color: var(--text-secondary);
   max-width: 600px;
   margin: 20px auto;
   /* Centers the paragraph with automatic horizontal margins */

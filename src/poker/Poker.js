@@ -1,5 +1,5 @@
 import React from 'react';
-import './Poker.css'; // Make sure to create this CSS file
+import '../assets/styles/Poker.css'; // Make sure to create this CSS file
 
 const Poker = () => {
   return (

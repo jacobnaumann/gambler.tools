@@ -1,0 +1,19 @@
+/* Casino.css */
+
+.casino-container {
+  padding: 20px;
+  background-color: var(--light-shade); /* Updated to use variable */
+  height: auto;
+}
+
+.casino-container h1 {
+  color: var(--dark-accent); /* Updated to use variable */
+  text-align: center;
+}
+
+.casino-container p {
+  color: var(--text-secondary); /* Updated to use variable */
+  max-width: 600px;
+  margin: 20px auto; /* Centers the paragraph with automatic horizontal margins */
+  text-align: center;
+}

@@ -1,0 +1,63 @@
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-accent); /* Updated */
+  color: var(--text-color); /* Updated */
+  padding: 0.5em 1em;
+}
+
+.logo-container img {
+  height: 50px;
+}
+
+.nav-links a {
+  color: var(--text-color); /* Updated */
+  transition: color 0.3s;
+  text-decoration: none;
+  margin: 0 1em;
+}
+
+.nav-links a:hover {
+  color: var(--secondary-color); /* Updated */
+}
+
+/* Footer Styling */
+.footer {
+  display: flex;
+  justify-content: space-around; /* This will space out the columns evenly */
+  text-align: center;
+  align-items: flex-start; /* Aligns columns to the top */
+  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+  padding: 20px;
+  background-color: var(--dark-accent);
+  color: var(--text-color);
+}
+
+.footer-column {
+  flex: 1; /* Each column will take equal space */
+  padding: 0px 50px; /* Maintain padding on left and right */
+  min-width: 200px; /* Minimum width for each column */
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li a {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+  margin: 10px 0; /* Adjusted for spacing between links */
+}
+
+.footer-column ul li a:hover {
+  color: var(--secondary-color);
+}

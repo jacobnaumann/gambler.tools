@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Common.css';
+import '../../assets/styles/Common.css';
 import logo from '../../assets/images/logo-colorful.png'; // Adjust the path if necessary
 
 const Header = () => {
@@ -17,7 +17,6 @@ const Header = () => {
         <Link to="/poker">Poker</Link>
         <Link to="/racing">Racing</Link>
         <Link to="/casino">Casino</Link>
-        <Link to="/misc">Misc</Link>
       </nav>
     </header>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Sports.css'; // Make sure to create this CSS file
+import '../assets/styles/Sports.css'; // Make sure to create this CSS file
 
 const Sports = () => {
     return (

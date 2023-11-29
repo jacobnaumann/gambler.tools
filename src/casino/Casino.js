@@ -1,5 +1,5 @@
 import React from 'react';
-import './Casino.css'; // Make sure to create this CSS file
+import '../assets/styles/Casino.css'; // Make sure to create this CSS file
 
 const Casino = () => {
   return (

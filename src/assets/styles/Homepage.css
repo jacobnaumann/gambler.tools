@@ -1,0 +1,87 @@
+/* Main container styling */
+.home-container {
+  padding: 20px;
+  background-color: var(--light-shade); /* Updated */
+  height: auto;
+}
+
+.home-container h1 {
+  text-align: center;
+}
+
+
+/* Hero section styling */
+.hero-section {
+  background-image: url('../images/hero-background.png'); /* Set your background image */
+  background-size: cover;
+  background-position: center;
+  color: var(--text-color); /* Updated */
+  padding: 60px 20px;
+}
+
+.hero-section h1 {
+  margin-bottom: 0.5rem;
+}
+
+.hero-section h1, .hero-section p {
+  /* Creating a halo effect around the text for high contrast */
+  color: rgb(255, 255, 255);
+  text-shadow:
+    -1px -1px 25px rgb(0, 0, 0),  
+     1px -1px 25px rgb(0, 0, 0),
+    -1px 1px 25px rgb(0, 0, 0),
+     1px 1px 25px rgb(0, 0, 0),
+    -2px -2px 25px rgb(0, 0, 0),
+     2px -2px 25px rgb(0, 0, 0),
+    -2px 2px 25px rgb(0, 0, 0),
+     2px 2px 25px rgb(0, 0, 0),
+     -1px -1px 25px rgb(0, 0, 0),  
+     1px -1px 25px rgb(0, 0, 0),
+    -1px 1px 25px rgb(0, 0, 0),
+     1px 1px 25px rgb(0, 0, 0),
+    -2px -2px 25px rgb(0, 0, 0),
+     2px -2px 25px rgb(0, 0, 0),
+    -2px 2px 25px rgb(0, 0, 0),
+     2px 2px 25px rgb(0, 0, 0);
+}
+
+/* Card styling */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+  flex: 1; /* Each card will try to take equal space */
+  max-width: calc(50% - 40px); /* Subtract the total margin from 100% divided by 2 */
+  width: 300px; /* Adjust width as needed */
+  margin: 20px; /* Space between cards */
+  border-radius: 20px; /* Optional: for rounded corners */
+  overflow: hidden; /* Keeps the image within the border-radius */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Optional: adds shadow for depth */
+  transition: transform 0.2s; /* Optional: for hover effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Optional: for hover effect */
+}
+
+.card-image {
+  width: 100%; /* Ensures the image covers the card width */
+  height: 100%; /* Ensures the image covers the card height */
+  object-fit: cover; /* Ensures the image covers the area nicely */
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 100%; /* Cards will take full width on smaller screens */
+  }
+}
