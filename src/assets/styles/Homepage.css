@@ -1,26 +1,33 @@
 /* Main container styling */
 .home-container {
-  padding: 20px;
-  background-color: var(--light-shade); /* Updated */
+  box-sizing: border-box;
+  background-color: var(--light-shade);
   height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering content vertically */
 }
-
-.home-container h1 {
-  text-align: center;
-}
-
 
 /* Hero section styling */
 .hero-section {
   background-image: url('../images/hero-background.png'); /* Set your background image */
   background-size: cover;
   background-position: center;
-  color: var(--text-color); /* Updated */
-  padding: 60px 20px;
+  color: var(--text-color);
+  width: 100%; /* Ensure the hero section spans the full width of the browser */
+  padding: 100px 20px; /* Add padding to increase the height of the hero section */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: center; /* Center the content vertically */
 }
 
+/* Adjust the hero text for different screen sizes */
 .hero-section h1 {
+  font-size: 3rem; /* Adjust the font size as needed */
   margin-bottom: 0.5rem;
+  text-align: center; /* Center the heading text */
 }
 
 .hero-section h1, .hero-section p {
@@ -45,43 +52,57 @@
      2px 2px 25px rgb(0, 0, 0);
 }
 
-/* Card styling */
+/* Card container styling */
 .cards-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Creates space between cards */
+  width: 100%; /* Ensures the container takes up the full width */
+  margin-top: 20px; /* Space below the hero section */
+
 }
 
+/* Card styling for desktop viewports */
 .card {
-  box-sizing: border-box; /* Include padding and borders in the element's total width and height */
-  flex: 1; /* Each card will try to take equal space */
-  max-width: calc(50% - 40px); /* Subtract the total margin from 100% divided by 2 */
-  width: 300px; /* Adjust width as needed */
-  margin: 20px; /* Space between cards */
-  border-radius: 20px; /* Optional: for rounded corners */
-  overflow: hidden; /* Keeps the image within the border-radius */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Optional: adds shadow for depth */
-  transition: transform 0.2s; /* Optional: for hover effect */
-}
-
-.card:hover {
-  transform: scale(1.05); /* Optional: for hover effect */
+  width: 240px; /* Square cards for desktop */
+  margin: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .card-image {
-  width: 100%; /* Ensures the image covers the card width */
-  height: 100%; /* Ensures the image covers the card height */
-  object-fit: cover; /* Ensures the image covers the area nicely */
+  width: 100%;
+  height: 240px; /* Equal to the width to make it square */
+  object-fit: cover;
 }
 
-.cards-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 480px) {
-  .card {
-    max-width: 100%; /* Cards will take full width on smaller screens */
+/* Responsive styles for mobile */
+@media (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
   }
+  
+  .card {
+    width: calc(100% - 20px); /* Takes up most of the width, accounting for padding */
+    height: 80px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto; /* Height is auto to maintain aspect ratio of the image */
+  }
+  
+  .hero-section {
+    padding: 30px 10px; /* Smaller padding for mobile */
+    max-width: 100%; /* Allows the hero section to expand fully */
+  }
+}
+
+/* Adjusting the halo effect for mobile */
+@media (max-width: 600px) {
+
 }

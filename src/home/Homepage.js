@@ -22,7 +22,7 @@ const Homepage = () => {
       </div>
       <div className="cards-container">
         {cardData.map((card, index) => (
-          <Card key={index} title={card.title} image={card.image} />
+          <Card key={index} title={card.title} image={card.image} link={card.link} />
         ))}
       </div>
     </div>
