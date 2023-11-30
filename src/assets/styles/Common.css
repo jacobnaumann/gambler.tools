@@ -24,6 +24,11 @@ header {
   margin-left: 0;
 }
 
+.logo img:hover {
+  transition: transform 0.2s ease;
+  transform: scale(1.1);
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -43,7 +48,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--color-primary);
+  color: var(--secondary-color);
 }
 
 /* Footer Styling */
