@@ -2,7 +2,8 @@
 header {
   position: relative;
   z-index: 2;
-  background-color: var(--dark-accent);
+  /* background-color: var(--dark-accent); */
+  background-color: transparent;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -22,6 +23,10 @@ header {
   padding-top: 5px;
   padding-left: 10px;
   margin-left: 0;
+}
+
+header nav.visible {
+  background-color: transparent;
 }
 
 .logo img:hover {
@@ -51,6 +56,7 @@ nav a:hover {
   color: var(--secondary-color);
 }
 
+
 /* Footer Styling */
 .footer {
   display: flex;
@@ -59,7 +65,7 @@ nav a:hover {
   align-items: flex-start; /* Aligns columns to the top */
   flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
   padding: 20px;
-  background-color: var(--dark-accent);
+  background-color: transparent;
   color: var(--text-color);
   max-width: 1000px;
 }
@@ -67,7 +73,7 @@ nav a:hover {
 .footer-column {
   flex: 1; /* Each column will take equal space */
   padding: 0px 50px; /* Maintain padding on left and right */
-  min-width: 200px; /* Minimum width for each column */
+  min-width: 150px; /* Minimum width for each column */
 }
 
 .footer-column h3 {
@@ -140,7 +146,7 @@ nav a:hover {
     padding-top: 20px;
     top: 60px;
     left: 0;
-    background-color: var(--dark-accent);
+    background-color: transparent;
   }
 
   nav ul {
@@ -167,5 +173,13 @@ nav a:hover {
   nav a:hover {
     background-color: var(--color-primary); /* Subtle background color on hover */
     color: var(--color-white); /* White text on hover for contrast */
+  }
+
+  .footer {
+    padding: 0;
+  }
+  
+  .footer-column {
+    padding: 0 10px;
   }
 }

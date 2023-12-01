@@ -1,7 +1,8 @@
 /* Main container styling */
 .home-container {
   box-sizing: border-box;
-  background-color: var(--light-shade);
+  /* background-color: var(--light-shade); */
+  background-color: transparent;
   height: auto;
   padding: 10px;
   display: flex;
@@ -11,12 +12,13 @@
 
 /* Hero section styling */
 .hero-section {
-  background-image: url('../images/hero-background.png'); /* Set your background image */
+  /* background-image: url('../images/hero-background.png'); 
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+  background-color: transparent;
   color: var(--text-color);
   width: 100%; /* Ensure the hero section spans the full width of the browser */
-  padding: 100px 20px; /* Add padding to increase the height of the hero section */
+  /* padding: 100px 20px;  */
   display: flex;
   flex-direction: column;
   align-items: center; /* Center the content horizontally */
