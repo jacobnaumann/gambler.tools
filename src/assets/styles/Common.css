@@ -2,7 +2,7 @@
 header {
   position: relative;
   z-index: 2;
-  background-color: var(--color-header-background);
+  background-color: var(--dark-accent);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -116,7 +116,7 @@ nav a:hover {
     width: 100%;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    background-color: var(--color-header-background);
+    background-color: var(--dark-accent);
   }
 
   .nav-toggle {
@@ -140,7 +140,7 @@ nav a:hover {
     padding-top: 20px;
     top: 60px;
     left: 0;
-    background-color: var(--color-header-background);
+    background-color: var(--dark-accent);
   }
 
   nav ul {

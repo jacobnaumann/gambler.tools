@@ -52,47 +52,7 @@
      2px 2px 25px rgb(0, 0, 0);
 }
 
-/* Cards styling */
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-}
 
-.card {
-  text-decoration: none; /* Removes underline from link */
-  color: var(--text-color); /* Inherits text color from parent */
-  background: linear-gradient(var(--light-accent) 50%, var(--text-secondary) 50%); /* Card background color */
-  border-radius: 4px; /* Rounded corners for the card */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Drop shadow similar to the image */
-  overflow: hidden; /* Ensures the content fits within the rounded corners */
-  transition: box-shadow 0.3s ease, transform 0.2s;
-  display: block; /* Makes the link a block element */
-  width: 300px; /* Width of the card */
-  margin: 20px; /* Space around the card */
-  text-align: center;
-  border-radius: 10px;
-}
-
-.card:hover {
-  transform: scale(1.1);
-}
-
-.card-content {
-  padding: 16px; /* Padding inside the card */
-}
-
-.card-title {
-  margin: 0; /* Removes default margin */
-  margin-bottom: 8px; /* Space below the title */
-  font-size: 1.5em; /* Title font size */
-}
-
-.card-text {
-  margin: 0; /* Removes default margin */
-  font-size: 1em; /* Text font size */
-}
 
 
 /* Responsive styles for mobile */
@@ -104,10 +64,5 @@
 
   .hero-section h1 {
     font-size: 1.5rem;
-  }
-
-  .card {
-    padding: 5px;
-    width: auto;
   }
 }
