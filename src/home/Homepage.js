@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import Card from '../common/card/Card';
 import '../assets/styles/Homepage.css'; // Make sure to create this CSS file
 
 const cardData = [
@@ -20,9 +20,7 @@ const Homepage = () => {
           <Card key={index} title={card.title} link={card.link} />
         ))}
       </div>
-    </div>
-   
-    
+    </div>    
   );
 };
 

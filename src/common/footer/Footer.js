@@ -5,7 +5,7 @@ import '../../assets/styles/Common.css';
 const Footer = () => {
     return (
       <footer className="footer">
-        <div className="footer-column">
+        <div className="footer-column-left">
           <h3>Pages</h3>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -15,7 +15,7 @@ const Footer = () => {
             <li><Link to="/casino">Casino</Link></li>
           </ul>
         </div>
-        <div className="footer-column">
+        <div className="footer-column-left">
           <h3>More</h3>
           <ul>
             <li><Link to="/contact">Contact</Link></li>

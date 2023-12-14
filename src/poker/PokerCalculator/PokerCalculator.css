@@ -1,0 +1,180 @@
+/* Main Styles */
+.poker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 1120px;
+}
+
+/* Deck Section */
+.deck-section {
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.card-selection {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+
+.suit-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+/* Card Styles */
+.poker-card {
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.poker-card img {
+    max-height: 100px;
+}
+
+.poker-card:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.poker-card.selected {
+    opacity: 0.4;
+}
+
+.poker-card.selected:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Game Section */
+.game-section {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+}
+
+/* Player Section */
+.player-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 125px;
+}
+
+.player-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Table Section */
+.table-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 125px;
+}
+
+.table-display {
+    height: 190px;
+}
+
+/* Hand Display */
+.hand-display,
+.table-display {
+    padding: 0 10px;
+}
+
+.hand-display h3,
+.table-display h3 {
+    margin-bottom: 10px;
+}
+
+.hand-display {
+    height: 200px;
+    /* Ensures the hand display has a consistent height */
+}
+
+/* Odds Display */
+.odds-display {
+    margin-left: 10px;
+    color: var(--tertiary-color);
+    font-weight: bold;
+}
+
+.tie-odds {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Card Rows */
+.cards-row {
+    display: flex;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calculate-button,
+.reset-button {
+    padding: 10px 15px;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.calculate-button {
+    background-color: var(--primary-color);
+    color: var(--dark-shade);
+}
+
+.reset-button {
+    background: none;
+}
+
+.calculate-button:hover {
+    color: var(--primary-color);
+    background-color: var(--dark-shade);
+}
+
+.reset-button:hover {
+    color: var(--dark-shade);
+    background-color: var(--text-secondary);
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .calculator-container,
+    .deck-section,
+    .player-section,
+    .table-section {
+        width: 100%;
+        /* Full width on smaller screens */
+    }
+
+    .game-section {
+        flex-direction: column;
+    }
+}

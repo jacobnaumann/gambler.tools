@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+    width: auto;
   }
   
   .card {
@@ -18,18 +19,20 @@
     margin: 20px; /* Space around the card */
     text-align: center;
     border-radius: 10px;  
+    background-color: transparent;
   }  
   .card:hover {
     transform: scale(1.1);
   }  
   
   .card-top {
-    overflow: hidden; 
+    overflow: hidden;
     color: var(--text-secondary);
     height: 50%;
     background-color: var(--dark-accent);
     margin: 0;
     padding: 0;
+    border-radius: 10px 10px 0 0;
   }
   
   .card-bottom {
@@ -38,11 +41,12 @@
     height: 50%;
     background-color: var(--text-secondary);
     padding: 0 10px 0 10px;
+    border-radius: 0 0 10px 10px;
   }
 
 /* Responsive styles for mobile */
 @media (max-width: 600px) {
     .card {
-      width: auto;
+      width: auto; 
     }
   }

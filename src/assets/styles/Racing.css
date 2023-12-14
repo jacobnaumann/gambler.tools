@@ -2,17 +2,15 @@
 
 .racing-container {
   padding: 20px;
-  background-color: var(--light-shade);
+  background-color: transparent;
   height: auto;
 }
 
 .racing-container h1 {
-  color: var(--dark-shade);
   text-align: center;
 }
 
 .racing-container p {
-  color: var(--text-secondary);
   max-width: 600px;
   margin: 20px auto;
   /* Centers the paragraph with automatic horizontal margins */
