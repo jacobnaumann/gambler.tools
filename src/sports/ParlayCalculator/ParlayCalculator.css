@@ -33,6 +33,17 @@
     align-items: center; /* Vertically aligns content */
 }
 
+.wager-line input {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    width: calc(40% - 20px);
+    margin-right: 10px;
+    font-size: 1.1rem;
+    width: 130px;
+}
 .bet-amount,
 .leg-adjust {
     display: flex;
@@ -56,10 +67,6 @@
     color: var(--text-color);
     width: 100%; /* Full width of their container */
     font-size: 1.1rem;
-}
-
-.wager-line input[type=number] {
-    width: 130px;
 }
 
 .parlay-structure select {
@@ -111,7 +118,8 @@
 /* Styling for the range slider */
 .leg-odds input[type='range'] {
     width: 50%; /* Adjust the width as per requirement */
-    -webkit-appearance: none; /* Override default appearance */
+    -webkit-appearance: none; /* Override default appearance for WebKit browsers */
+    appearance: none; /* Standard property */
     background: var(--secondary-color);
     height: 6px; /* Slider height */
     border-radius: 4px;
@@ -120,6 +128,7 @@
 /* Custom styling for range slider thumb */
 .leg-odds input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
+    appearance: none; /* Standard property */
     background: var(--primary-color);
     width: 20px;
     height: 20px;

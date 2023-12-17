@@ -61,7 +61,8 @@ nav a:hover {
 /* Footer Styling */
 .footer {
   display: flex;
-  justify-content: space-around; /* This will space out the columns evenly */
+  justify-content: center;
+  gap: 100px;
   text-align: center;
   align-items: flex-start; /* Aligns columns to the top */
   flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
@@ -178,9 +179,5 @@ nav a:hover {
 
   .footer {
     padding: 0;
-  }
-  
-  .footer-column {
-  
   }
 }

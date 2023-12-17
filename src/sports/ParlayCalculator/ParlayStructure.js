@@ -33,7 +33,6 @@ const ParlayStructure = ({ numLegs, updateNumLegs, betAmount, setBetAmount }) =>
                 <div className='bet-amount'>
                     <label>Total Wager: $</label>
                     <input
-                        type='number'
                         value={betAmount}
                         onChange={handleBetAmountChange}
                         onClick={(e) => e.target.value = ''}
