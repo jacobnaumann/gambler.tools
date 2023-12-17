@@ -4,8 +4,8 @@ import Card from '../common/card/Card';
 
 const Poker = () => {
   const pokerCardData = [
-    { title: 'Equity Calculator', link: '/poker/pokercalculator' },
-    { title: 'Ranges', link: '/poker/ranges'  },
+    { title: 'Equity Calculator', link: '/poker/equitycalculator' },
+    { title: 'ICM Calculator', link: '/poker/icmcalculator'  },
     { title: 'Poker Room Directory', link: '/poker/directory' }
   ];
 

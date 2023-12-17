@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TexasHoldem } from 'poker-odds-calc';
 import CardSelection from './CardSelection';
 import CardDisplay from './CardDisplay';
-import './PokerCalculator.css';
+import './EquityCalculator.css';
 
 
 const PokerCalculator = () => {
