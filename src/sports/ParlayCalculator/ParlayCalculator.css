@@ -1,0 +1,243 @@
+/* ParlayCalculator.css */
+
+.parlay-calculator-container {
+    background-color: var(--dark-accent);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 340px;
+}
+
+.parlay-calculator-container h1 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.parlay-calculator-container p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Parlay Structure Styling */
+.parlay-structure {
+    display: grid;
+    grid-template-rows: auto auto; /* Each line gets its own row */
+    grid-gap: 10px; /* Space between grid rows */
+    margin-bottom: 20px; /* Space below the entire structure */
+}
+
+.wager-line,
+.leg-adjust-line {
+    display: flex;
+    align-items: center; /* Vertically aligns content */
+}
+
+.bet-amount,
+.leg-adjust {
+    display: flex;
+    align-items: center; /* Vertically aligns content */
+    flex-grow: 1; /* Allow these elements to grow and fill available space */
+    justify-content: center;
+}
+
+.parlay-structure label {
+    min-width: 130px; /* Minimum width for labels */
+    text-align: left; /* Align text to the right */
+    margin-right: 10px; /* Spacing between label and input/select/button */
+}
+
+.parlay-structure input[type='number'],
+.parlay-structure select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    width: 100%; /* Full width of their container */
+    font-size: 1.1rem;
+}
+
+.wager-line input[type=number] {
+    width: 130px;
+}
+
+.parlay-structure select {
+    width: 60px;
+}
+
+.parlay-structure button {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 12px;
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 2px;
+}
+
+
+
+/* Styling for each leg */
+.leg {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    justify-content: center;
+}
+
+/* Styling for the leg number */
+.leg-number {
+    color: var(--primary-color);
+    margin-right: 10px;
+    min-width: 55px; /* Set a minimum width to ensure it's always on a single row */
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+/* Styling for the odds input */
+.leg-odds input[type='text'] {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    width: calc(40% - 20px); /* Adjust the width as per requirement */
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Styling for the range slider */
+.leg-odds input[type='range'] {
+    width: 50%; /* Adjust the width as per requirement */
+    -webkit-appearance: none; /* Override default appearance */
+    background: var(--secondary-color);
+    height: 6px; /* Slider height */
+    border-radius: 4px;
+}
+
+/* Custom styling for range slider thumb */
+.leg-odds input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: var(--primary-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Custom styling for range slider thumb for other browsers like Firefox */
+.leg-odds input[type='range']::-moz-range-thumb {
+    background: var(--primary-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.calculate-reset-buttons button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.calculate-reset-buttons .reset-button {
+    background-color: var(--tertiary-color);
+}
+
+/* Styling for Parlay Payout */
+.parlay-payout {
+    background-color: var(--light-accent);
+    padding: 5px;
+    border-radius: 8px;
+    color: var(--text-color);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 5px auto;
+}
+
+/* Styling for the payout header with Flexbox */
+.payout-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px; /* Spacing between the header and the next element */
+}
+
+.parlay-payout h2, .parlay-payout p {
+    margin: 0 5px;
+    font-size: 1.3rem;
+}
+
+.parlay-payout h2 {
+    color: var(--primary-color);
+}
+
+.payout-header {
+    margin: 10px;
+}
+
+.payout-info p {
+    margin: 8px;
+    font-size: 1rem;
+}
+
+
+/* Media Query for Desktop View */
+@media (min-width: 560px) {
+    .parlay-calculator-container {
+        width: 550px;
+        /* Adjust the width as needed */
+        margin: 40px auto;
+        /* Centering the container */
+    }
+
+    .parlay-structure .bet-amount-input {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .parlay-structure .leg-adjust {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .parlay-legs {
+        gap: 20px;
+        width: 500px;
+        margin: auto;
+    }
+
+    .leg {
+        margin: 20px auto;
+        width: 300px;
+    }
+
+    .leg-odds {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .leg-odds input[type='range'] {
+        width: 60%;
+        margin-right: 10px;
+    }
+
+    .calculate-reset-buttons {
+        display: flex;
+        justify-content: space-between;
+        /* Separate calculate and reset buttons */
+    }
+
+    .calculate-reset-buttons button {
+        width: 48%;
+        /* Adjust the width of buttons */
+    }
+}
