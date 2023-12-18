@@ -1,3 +1,5 @@
+/* ICMCalculator.css */
+
 .icm-calculator-container {
     background-color: var(--dark-accent);
     padding: 20px;
@@ -13,6 +15,137 @@
 }
 
 .icm-calculator-container p {
+    color: var(--text-color);
     text-align: center;
     margin-bottom: 20px;
 }
+
+/* Player Input Styling */
+.structure-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.structure-container label {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.players-container,
+.payouts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.payouts-container label {
+    min-width: 120px;
+    text-align: right;
+}
+
+.places-paid {
+    margin-bottom: 8px;
+}
+
+.number-of-players, 
+.places-paid,
+.player-chips,
+.payout-amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.number-of-players {
+    margin-bottom: 8px;
+}
+
+.number-of-players label {
+    color: var(--text-color);
+}
+
+.info-title {
+    padding: 0;
+    margin: 5px auto -10px auto;
+}
+.info-title h2 {
+    color: var(--tertiary-color);
+    font-size: 1.1rem;
+}
+
+
+.structure-container input[type='number'],
+.structure-container select {
+    padding: 5px 0 4px 6px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.structure-container select {
+    width: 60px;
+}
+
+.structure-container button {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 2px;
+}
+
+.icm-calculate-reset-buttons button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.icm-calculate-reset-buttons .reset-button {
+    background-color: var(--tertiary-color);
+}
+
+/* ICM Results Styling */
+.icm-results {
+    background-color: var(--light-accent);
+    padding: 5px 10px 8px; /* Increased padding for better spacing */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto; /* Increased margin for better spacing */
+}
+
+.icm-results h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px; /* Increased margin for better spacing */
+    font-size: 1.3rem;
+}
+
+.icm-payout .payout-line {
+    display: flex;
+    justify-content: flex-start; /* Align to the start to prevent stretching */
+    align-items: center;
+    margin: 8px 0; /* Top and bottom margin for each payout line */
+}
+
+.icm-payout .player-label {
+    margin-right: 15px; /* Add margin to separate from the amount */
+    font-size: 1.1rem;
+    width: 80px;
+}
+
+.icm-payout .payout-amount {
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+

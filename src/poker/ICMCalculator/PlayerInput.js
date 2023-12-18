@@ -32,9 +32,28 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
         }
     };
 
+    // Function to format ordinal numbers (1st, 2nd, 3rd, etc.)
+    const formatOrdinalNumber = (number) => {
+        const j = number % 10,
+            k = number % 100;
+        if (j === 1 && k !== 11) {
+            return number + "st";
+        }
+        if (j === 2 && k !== 12) {
+            return number + "nd";
+        }
+        if (j === 3 && k !== 13) {
+            return number + "rd";
+        }
+        return number + "th";
+    };
+
     return (
         <div className="structure-container">
-            <div className='players-container'>
+            <div className='players-container'>   
+            <div className='info-title'>
+                    <h2>Player Chip Information</h2>
+                </div>             
                 <div className="number-of-players">
                     <label>Players Remaining: </label>
                     <button onClick={handleSubtractPlayer}>-</button>
@@ -52,11 +71,15 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
                             type="number"
                             value={playerChips[index] || 0}
                             onChange={(e) => onPlayerChipsChange(index, parseInt(e.target.value, 10))}
+                            onClick={(e) => e.target.value = ''}
                         />
                     </div>
                 ))}
             </div>
             <div className='payouts-container'>
+            <div className='info-title'>
+                    <h2>Prize Pool Information</h2>
+                </div>
                 <div className="places-paid">
                     <label>Places Paid: </label>
                     <button onClick={handleSubtractPlacePaid}>-</button>
@@ -69,16 +92,16 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
                 </div>
                 {Array.from({ length: numberOfPlacesPaid }).map((_, index) => (
                     <div key={index} className="payout-amount">
-                        <label>Place {index + 1} Payout: $</label>
+                        <label>{formatOrdinalNumber(index + 1)} Place: $</label>
                         <input
                             type="number"
                             value={payouts[index] || 0}
                             onChange={(e) => onPayoutsChange(index, parseFloat(e.target.value))}
+                            onClick={(e) => e.target.value = ''}
                         />
                     </div>
                 ))}
             </div>
-
         </div>
     );
 };

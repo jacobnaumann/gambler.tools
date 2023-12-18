@@ -66,8 +66,7 @@ const ICMCalculator = () => {
             <ICMButtons
                 onCalculate={calculateICM}
                 onReset={resetCalculator}
-            />
-            
+            />            
         </div>
     );
 };

@@ -23,7 +23,7 @@
 .parlay-structure {
     display: grid;
     grid-template-rows: auto auto; /* Each line gets its own row */
-    grid-gap: 10px; /* Space between grid rows */
+    grid-gap: 5px; /* Space between grid rows */
     margin-bottom: 20px; /* Space below the entire structure */
 }
 
@@ -35,7 +35,7 @@
 
 .wager-line input {
     border: 1px solid var(--border-color);
-    padding: 8px;
+    padding: 5px 0 4px 6px;
     border-radius: 4px;
     background-color: var(--dark-bg);
     color: var(--text-color);
@@ -60,7 +60,7 @@
 
 .parlay-structure input[type='number'],
 .parlay-structure select {
-    padding: 8px;
+    padding: 5px 0 4px 6px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     background-color: var(--dark-bg);
@@ -76,20 +76,25 @@
 .parlay-structure button {
     background-color: var(--secondary-color);
     border: none;
-    padding: 10px 12px;
+    padding: 4px 0;
+    width: 30px;
     border-radius: 4px;
     color: var(--text-color);
     cursor: pointer;
     margin: 2px;
+    font-size: 1.2rem;
 }
 
 
 
 /* Styling for each leg */
+.parlay-legs {
+    margin-bottom: 20px;
+}
 .leg {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-left: 20px;
     justify-content: center;
 }
@@ -106,7 +111,7 @@
 /* Styling for the odds input */
 .leg-odds input[type='text'] {
     border: 1px solid var(--border-color);
-    padding: 8px;
+    padding: 5px 0 4px 6px;
     border-radius: 4px;
     background-color: var(--dark-bg);
     color: var(--text-color);
@@ -177,6 +182,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 5px; /* Spacing between the header and the next element */
+    margin: 10px;
 }
 
 .parlay-payout h2, .parlay-payout p {
@@ -186,10 +192,6 @@
 
 .parlay-payout h2 {
     color: var(--primary-color);
-}
-
-.payout-header {
-    margin: 10px;
 }
 
 .payout-info p {
