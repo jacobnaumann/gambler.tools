@@ -41,8 +41,8 @@
 }
 
 .payouts-container label {
-    width: 120px;
-    
+    width: 180px;
+
 }
 
 .places-paid {
@@ -53,7 +53,7 @@
     width: 110px;
 }
 
-.number-of-players, 
+.number-of-players,
 .places-paid,
 .player-chips,
 .payout-amount {
@@ -62,8 +62,16 @@
 }
 
 .player-chips label {
-    width: 130px;
+    width: auto; /* Let the width be determined by content up to a maximum width */
+    min-width: 142px;
+    max-width: 200px;
 }
+.payout-amount label {
+    width: auto; /* Let the width be determined by content up to a maximum width */
+    min-width: 120px;
+    max-width: 200px; /* Adjust as needed */
+}
+
 
 .number-of-players {
     margin-bottom: 8px;
@@ -78,9 +86,10 @@
     padding: 0;
     margin: 5px 0 -10px 0;
 }
+
 .info-title h2 {
     color: var(--tertiary-color);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 
@@ -92,11 +101,12 @@
     background-color: var(--dark-bg);
     color: var(--text-color);
     font-size: 1.1rem;
+    box-sizing: border-box;
+    /* Adjust width to be responsive instead of a fixed min-width */
+    width: calc(100% - 20px);
 }
 
-.structure-container input {
-    width: 160px;
-}
+
 
 .structure-container select {
     width: 60px;
@@ -121,38 +131,47 @@
     color: var(--text-color);
     background-color: var(--secondary-color);
     cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-.icm-calculate-reset-buttons .reset-button {
+.icm-calculate-reset-buttons .icm-reset-button {
     background-color: var(--tertiary-color);
 }
 
 /* ICM Results Styling */
 .icm-results {
     background-color: var(--light-accent);
-    padding: 5px 10px 8px; /* Increased padding for better spacing */
+    padding: 5px 10px 8px;
+    /* Increased padding for better spacing */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px auto; /* Increased margin for better spacing */
+    margin: 20px auto;
+    /* Increased margin for better spacing */
 }
 
 .icm-results h2 {
     color: var(--primary-color);
-    margin-bottom: 15px; /* Increased margin for better spacing */
+    margin-bottom: 15px;
+    /* Increased margin for better spacing */
     font-size: 1.3rem;
 }
 
 .icm-payout .payout-line {
     display: flex;
-    justify-content: flex-start; /* Align to the start to prevent stretching */
+    justify-content: flex-start;
+    /* Align to the start to prevent stretching */
     align-items: center;
-    margin: 8px 0; /* Top and bottom margin for each payout line */
+    margin: 8px 0;
+    /* Top and bottom margin for each payout line */
 }
 
 .icm-payout .player-label {
-    margin-right: 15px; /* Add margin to separate from the amount */
+    margin-right: 15px;
+    /* Add margin to separate from the amount */
     font-size: 1.1rem;
-    width: 80px;
+    min-width: 80px;
 }
 
 .icm-payout .payout-amount {
@@ -160,4 +179,96 @@
     font-size: 1.1rem;
 }
 
+/* CSS for Calculation Progress Text */
+.calculation-progress {
+    color: var(--primary-color);
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  /* CSS for a Visual Progress Bar */
+  .calculation-progress-bar {
+    background-color: var(--light-accent);
+    border-radius: 4px;
+    overflow: hidden; /* Ensures the inner bar stays within the border radius */
+    position: relative;
+    height: 20px;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .calculation-progress-bar-inner {
+    background-color: var(--primary-color);
+    height: 100%;
+    transition: width 0.5s ease; /* Smooth transition for the width */
+  }
+  
+  /* Add this to your existing CSS */
+  .icm-calculate-reset-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .icm-calculate-reset-buttons button {
+    flex-grow: 1;
+  }
 
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; 
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-color);
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Media Query for Desktop View */
+@media (min-width: 780px) {
+    .structure-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+
+    .player-chips label {
+        width: auto; /* Let the width be determined by content up to a maximum width */
+        min-width: 142px;
+        max-width: 200px; /* Adjust as needed */
+    }
+    .payout-amount label {
+        width: auto; /* Let the width be determined by content up to a maximum width */
+        min-width: 120px;
+        max-width: 200px; /* Adjust as needed */
+    }
+
+    .structure-container select {
+        width: 60px; /* Full width of their container */
+    }
+
+    .icm-calculate-reset-buttons {
+        display: flex;
+        justify-content: space-between; /* Adjust buttons to be spaced out across the container */
+        gap: 20px;
+    }
+
+    .icm-results {
+        grid-column: 1 / -1; /* Full width of the grid */
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
+import LoadingIndicator from './LoadingIndicator'; // Ensure this is correctly imported
 
-const ICMResults = ({ results }) => {
-    // Function to format the result as currency with commas
+const ICMResults = ({ results, isLoading }) => {
     const formatCurrency = (amount) => {
         return amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     };
@@ -12,12 +12,16 @@ const ICMResults = ({ results }) => {
                 <h2>Payouts:</h2>
             </div>
             <div className='icm-payout'>
-                {results.map((result, index) => (
-                    <div key={index} className="payout-line">
-                        <span className="player-label">Player {index + 1}:</span>
-                        <span className="payout-amount">${formatCurrency(result)}</span>
-                    </div>
-                ))}
+                {isLoading ? (
+                    <LoadingIndicator />
+                ) : (
+                    results.map((result, index) => (
+                        <div key={index} className="payout-line">
+                            <span className="player-label">Player {index + 1}:</span>
+                            <span className="payout-amount">${formatCurrency(result)}</span>
+                        </div>
+                    ))
+                )}
             </div>
         </div>
     );
