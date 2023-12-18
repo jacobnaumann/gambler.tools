@@ -41,12 +41,16 @@
 }
 
 .payouts-container label {
-    min-width: 120px;
-    text-align: right;
+    width: 120px;
+    
 }
 
 .places-paid {
     margin-bottom: 8px;
+}
+
+.places-paid label {
+    width: 110px;
 }
 
 .number-of-players, 
@@ -55,7 +59,10 @@
 .payout-amount {
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+.player-chips label {
+    width: 130px;
 }
 
 .number-of-players {
@@ -64,11 +71,12 @@
 
 .number-of-players label {
     color: var(--text-color);
+    width: 170px;
 }
 
 .info-title {
     padding: 0;
-    margin: 5px auto -10px auto;
+    margin: 5px 0 -10px 0;
 }
 .info-title h2 {
     color: var(--tertiary-color);
@@ -78,12 +86,16 @@
 
 .structure-container input[type='number'],
 .structure-container select {
-    padding: 5px 0 4px 6px;
+    padding: 5px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     background-color: var(--dark-bg);
     color: var(--text-color);
     font-size: 1.1rem;
+}
+
+.structure-container input {
+    width: 160px;
 }
 
 .structure-container select {
