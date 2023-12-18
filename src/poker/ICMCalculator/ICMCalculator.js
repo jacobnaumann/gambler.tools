@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PlayerInput from './PlayerInput';
-import PayoutStructure from './PayoutStructure';
 import ICMResults from './ICMResults';
 import ICMButtons from './ICMButtons';
 import './ICMCalculator.css';
