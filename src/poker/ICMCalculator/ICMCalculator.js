@@ -15,6 +15,9 @@ const ICMCalculator = () => {
     const handleNumberOfPlayersChange = (num) => {
         setNumberOfPlayers(num);
         setPlayerChips(new Array(num).fill(0));
+        if (num < numberOfPlacesPaid) {
+            setNumberOfPlacesPaid(num); // Ensure places paid does not exceed number of players
+        }
     };
 
     const handlePlayerChipsChange = (index, chips) => {
@@ -32,6 +35,9 @@ const ICMCalculator = () => {
     };
 
     const handleNumberOfPlacesPaidChange = (num) => {
+        if (num > numberOfPlayers) {
+            return;
+        }
         setNumberOfPlacesPaid(num);
         setPayouts(new Array(num).fill(0)); // Reset payouts when number of places paid changes
     };
@@ -56,6 +62,10 @@ const ICMCalculator = () => {
         return { isValid: true };
     };
 
+    const calculateTotalPrizePool = () => {
+        return payouts.reduce((acc, val) => acc + val, 0);
+    };
+
     const calculateICM = () => {
         const playerChipsValidation = validatePlayerChips();
         const payoutsValidation = validatePayouts();
@@ -76,6 +86,8 @@ const ICMCalculator = () => {
             setIsLoading(false); // Set loading to false when calculation ends
         }, 0); // Execute calculations asynchronously
     };
+
+    const totalPrizePool = calculateTotalPrizePool();
 
     const resetCalculator = () => {
         setNumberOfPlayers(6);
