@@ -150,7 +150,7 @@
     cursor: pointer;
 }
 
-.calculate-reset-buttons button {
+.parlay-calculate-reset-buttons button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
@@ -164,8 +164,18 @@
     font-size: 1rem;
 }
 
-.calculate-reset-buttons .reset-button {
+.parlay-calculate-reset-buttons .parlay-reset-button {
     background-color: var(--tertiary-color);
+}
+
+.parlay-calculate-button:hover {
+    color: var(--primary-color);
+    background-color: var(--dark-shade);
+}
+
+.parlay-reset-button:hover {
+    color: var(--dark-shade);
+    background-color: var(--text-secondary);
 }
 
 /* Styling for Parlay Payout */

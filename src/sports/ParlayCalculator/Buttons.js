@@ -17,11 +17,11 @@ const Buttons = ({ onCalculate, onReset, odds }) => {
     };
 
     return (
-        <div className='calculate-reset-buttons'>
-            <button onClick={handleCalculateClick} className='calculate-button'>
+        <div className='parlay-calculate-reset-buttons'>
+            <button onClick={handleCalculateClick} className='parlay-calculate-button'>
                 Calculate
             </button>
-            <button onClick={onReset} className='reset-button'>
+            <button onClick={onReset} className='parlay-reset-button'>
                 Reset
             </button>
         </div>

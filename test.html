@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipboard Test</title>
+</head>
+<body>
+    <input type="text" id="test-input" placeholder="Paste here" onpaste="handlePaste(event)">
+    <script>
+        function handlePaste(event) {
+            const clipboardData = event.clipboardData || window.clipboardData;
+            const pastedData = clipboardData.getData('Text');
+            console.log('Pasted Data:', pastedData);
+        }
+    </script>
+</body>
+</html>

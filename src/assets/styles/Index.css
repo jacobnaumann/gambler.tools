@@ -26,7 +26,6 @@
 
 body {
   background-image: url('../images/bg-dalle-gold-gambling-motif-DARKENED.png');
-  margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: transparent;
@@ -34,4 +33,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 1120px;
+  margin: auto;
 }

@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ChipInputModal from './ChipInputModal';
+import PayoutInputModal from './PayoutInputModal'; // Import the new modal
 
 const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, onPlayerChipsChange, numberOfPlacesPaid, onNumberOfPlacesPaidChange, payouts, onPayoutsChange }) => {
-    const MAX_PLAYERS = 30; // Define the maximum number of players
-    const MAX_PLACES_PAID = 30; // Define the maximum number of places paid
+    const MAX_PLAYERS = 200; // Define the maximum number of players
+    const MAX_PLACES_PAID = 200; // Define the maximum number of places paid
+    const [isChipModalOpen, setIsChipModalOpen] = useState(false);
+    const [isPayoutModalOpen, setIsPayoutModalOpen] = useState(false);
 
     // Handle adding a player
     const handleAddPlayer = () => {
         if (numberOfPlayers < MAX_PLAYERS) {
             onNumberOfPlayersChange(numberOfPlayers + 1);
+            onPlayerChipsChange([...playerChips, 0]); // Add a new player with 0 chips
         }
     };
 
@@ -15,6 +20,7 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
     const handleSubtractPlayer = () => {
         if (numberOfPlayers > 2) {
             onNumberOfPlayersChange(numberOfPlayers - 1);
+            onPlayerChipsChange(playerChips.slice(0, -1)); // Remove the last player's chips
         }
     };
 
@@ -29,6 +35,40 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
     const handleSubtractPlacePaid = () => {
         if (numberOfPlacesPaid > 1) {
             onNumberOfPlacesPaidChange(numberOfPlacesPaid - 1);
+        }
+    };
+
+    // Handle paste of chip counts
+    const handleChipCountsSubmit = (pastedData) => {
+        const chipCounts = pastedData.split('\n')
+            .map(line => parseInt(line.replace(/,/g, '').trim(), 10))
+            .filter(num => !isNaN(num));
+
+        if (chipCounts.length > 0) {
+            onNumberOfPlayersChange(chipCounts.length);
+            onPlayerChipsChange(chipCounts);
+        }
+    };
+
+    // Handle paste of payout values
+    const handlePayoutsSubmit = (pastedData) => {
+        console.log('Pasted Payout Data:', pastedData); // Debugging: Log the raw pasted data
+
+        const payoutValues = pastedData.split('\n')
+            .map(line => {
+                const parsedNumber = parseFloat(line.replace(/[$,]/g, '').trim()); // Remove $ and commas
+                console.log('Parsed Payout:', parsedNumber); // Debugging: Log each parsed payout
+                return parsedNumber;
+            })
+            .filter(num => !isNaN(num)); // Filter out NaN values
+
+        console.log('Payout Values:', payoutValues); // Debugging: Log the final payout values array
+
+        if (payoutValues.length > 0) {
+            onNumberOfPlacesPaidChange(payoutValues.length);
+            onPayoutsChange(payoutValues);
+        } else {
+            console.error('No valid payout values found.'); // Debugging: Log an error if no valid numbers
         }
     };
 
@@ -51,11 +91,11 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
     return (
         <div className="structure-container">
             <div className='players-container'>   
-            <div className='info-title'>
+                <div className='info-title'>
                     <h2>Player Chip Information</h2>
                 </div>             
                 <div className="number-of-players">
-                    <label>Players Remaining: </label>
+                    <label>Players Left: </label>
                     <button onClick={handleSubtractPlayer}>-</button>
                     <select value={numberOfPlayers} onChange={(e) => onNumberOfPlayersChange(parseInt(e.target.value, 10))}>
                         {[...Array(MAX_PLAYERS).keys()].map(i => (
@@ -63,6 +103,7 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
                         ))}
                     </select>
                     <button onClick={handleAddPlayer}>+</button>
+                    <button onClick={() => setIsChipModalOpen(true)}>Manual Entry</button>
                 </div>
                 {Array.from({ length: numberOfPlayers }).map((_, index) => (
                     <div key={index} className="player-chips">
@@ -76,8 +117,13 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
                     </div>
                 ))}
             </div>
+            <ChipInputModal
+                isOpen={isChipModalOpen}
+                onClose={() => setIsChipModalOpen(false)}
+                onSubmit={handleChipCountsSubmit}
+            />
             <div className='payouts-container'>
-            <div className='info-title'>
+                <div className='info-title'>
                     <h2>Prize Pool Information</h2>
                 </div>
                 <div className="places-paid">
@@ -89,6 +135,7 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
                         ))}
                     </select>
                     <button onClick={handleAddPlacePaid}>+</button>
+                    <button onClick={() => setIsPayoutModalOpen(true)}>Manual Entry</button>
                 </div>
                 {Array.from({ length: numberOfPlacesPaid }).map((_, index) => (
                     <div key={index} className="payout-amount">
@@ -102,6 +149,11 @@ const PlayerInput = ({ numberOfPlayers, onNumberOfPlayersChange, playerChips, on
                     </div>
                 ))}
             </div>
+            <PayoutInputModal
+                isOpen={isPayoutModalOpen}
+                onClose={() => setIsPayoutModalOpen(false)}
+                onSubmit={handlePayoutsSubmit}
+            />
         </div>
     );
 };

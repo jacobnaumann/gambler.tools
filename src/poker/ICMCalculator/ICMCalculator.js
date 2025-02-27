@@ -20,26 +20,12 @@ const ICMCalculator = () => {
         }
     };
 
-    const handlePlayerChipsChange = (index, chips) => {
-        const newPlayerChips = [...playerChips];
-        newPlayerChips[index] = chips;
-        setPlayerChips(newPlayerChips);
+    const handlePlayerChipsChange = (chips) => {
+        setPlayerChips(chips);
     };
 
-    const handlePayoutsChange = (index, payout) => {
-        const newPayouts = payouts.length >= numberOfPlacesPaid
-            ? [...payouts]
-            : new Array(numberOfPlacesPaid).fill(0);
-        newPayouts[index] = payout;
-        setPayouts(newPayouts);
-    };
-
-    const handleNumberOfPlacesPaidChange = (num) => {
-        if (num > numberOfPlayers) {
-            return;
-        }
-        setNumberOfPlacesPaid(num);
-        setPayouts(new Array(num).fill(0)); // Reset payouts when number of places paid changes
+    const handlePayoutsChange = (payouts) => {
+        setPayouts(payouts);
     };
 
     // Validation function for player chips
@@ -60,10 +46,6 @@ const ICMCalculator = () => {
             }
         }
         return { isValid: true };
-    };
-
-    const calculateTotalPrizePool = () => {
-        return payouts.reduce((acc, val) => acc + val, 0);
     };
 
     const calculateICM = () => {
@@ -87,8 +69,6 @@ const ICMCalculator = () => {
         }, 0); // Execute calculations asynchronously
     };
 
-    const totalPrizePool = calculateTotalPrizePool();
-
     const resetCalculator = () => {
         setNumberOfPlayers(6);
         setPlayerChips([]);
@@ -106,8 +86,8 @@ const ICMCalculator = () => {
                 onNumberOfPlayersChange={handleNumberOfPlayersChange}
                 playerChips={playerChips}
                 onPlayerChipsChange={handlePlayerChipsChange}
-                numberOfPlacesPaid={numberOfPlacesPaid} // Pass the new props
-                onNumberOfPlacesPaidChange={handleNumberOfPlacesPaidChange}
+                numberOfPlacesPaid={numberOfPlacesPaid}
+                onNumberOfPlacesPaidChange={setNumberOfPlacesPaid}
                 payouts={payouts}
                 onPayoutsChange={handlePayoutsChange}
             />

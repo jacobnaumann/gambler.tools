@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.2ec653cf.css",
-    "main.js": "/static/js/main.6f94accb.js",
+    "main.css": "/static/css/main.dd63f505.css",
+    "main.js": "/static/js/main.87c36344.js",
     "static/media/bg-dalle-gold-gambling-motif-DARKENED.png": "/static/media/bg-dalle-gold-gambling-motif-DARKENED.1525ff7e30b5fb6db52d.png",
     "static/media/logo-colorful.png": "/static/media/logo-colorful.89424bfd9ab92105e029.png",
     "index.html": "/index.html",
-    "main.2ec653cf.css.map": "/static/css/main.2ec653cf.css.map",
-    "main.6f94accb.js.map": "/static/js/main.6f94accb.js.map"
+    "main.dd63f505.css.map": "/static/css/main.dd63f505.css.map",
+    "main.87c36344.js.map": "/static/js/main.87c36344.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ec653cf.css",
-    "static/js/main.6f94accb.js"
+    "static/css/main.dd63f505.css",
+    "static/js/main.87c36344.js"
   ]
 }
