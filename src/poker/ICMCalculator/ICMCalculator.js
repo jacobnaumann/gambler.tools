@@ -20,12 +20,30 @@ const ICMCalculator = () => {
         }
     };
 
-    const handlePlayerChipsChange = (chips) => {
-        setPlayerChips(chips);
+    const handlePlayerChipsChange = (indexOrArray, value) => {
+        // If the first parameter is an array, replace the entire playerChips array
+        if (Array.isArray(indexOrArray)) {
+            setPlayerChips(indexOrArray);
+        } 
+        // Otherwise, update the chip count for the specific player
+        else {
+            const updatedChips = [...playerChips];
+            updatedChips[indexOrArray] = value;
+            setPlayerChips(updatedChips);
+        }
     };
 
-    const handlePayoutsChange = (payouts) => {
-        setPayouts(payouts);
+    const handlePayoutsChange = (indexOrArray, value) => {
+        // If the first parameter is an array, replace the entire payouts array
+        if (Array.isArray(indexOrArray)) {
+            setPayouts(indexOrArray);
+        } 
+        // Otherwise, update the payout amount for the specific place
+        else {
+            const updatedPayouts = [...payouts];
+            updatedPayouts[indexOrArray] = value;
+            setPayouts(updatedPayouts);
+        }
     };
 
     // Validation function for player chips
@@ -91,7 +109,12 @@ const ICMCalculator = () => {
                 payouts={payouts}
                 onPayoutsChange={handlePayoutsChange}
             />
-            <ICMResults results={icmResults} isLoading={isLoading} />
+            <ICMResults 
+                results={icmResults} 
+                isLoading={isLoading} 
+                playerChips={playerChips} 
+                payouts={payouts} 
+            />
             <ICMButtons
                 onCalculate={calculateICM}
                 onReset={resetCalculator}

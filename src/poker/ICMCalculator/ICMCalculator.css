@@ -356,3 +356,32 @@
 .modal-content button:hover {
     background-color: var(--primary-color);
 }
+
+.icm-payout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copy-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+    background-color: #e0e0e0;
+}
+
+.copy-button svg {
+    width: 18px;
+    height: 18px;
+}
